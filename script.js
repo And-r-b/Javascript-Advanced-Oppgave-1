@@ -1,9 +1,5 @@
 // Valgte Case 1
 
-// Finn luksusproduktene i Alvas sortiment
-// Bruk .some() for å sjekke om det finnes produkter som koster mer enn 1000 gullmynter.
-// Hvis ja, vil Alva legge dem i et spesielt luksushjørne i butikken.
-
 // Regn ut verdien av hele Alvas lager
 // Bruk .reduce() for å finne den totale kostnaden av alle produktene.
 // Alva må vite dette for å sette riktig pris på forsikringen av varene sine.
@@ -54,11 +50,20 @@ console.log(electronicNames);
 
 
 /* Case 1-4
+Alva ville sjekke om det er et produkt som er over 1000 gullmynter
+og hvis det var så skulle den bli plassert i en luksuss hylle.
 
+For å sjekke dette så ladge vi en .some() metode som sjekker om hvis
+vi har priser som er større enn 1000
+så vil det bli plassert i hylla.
 */
-
-
+const expensiveProduct = products.some(product => product.price > 1000);
+console.log(expensiveProduct);
 
 /* Case 1-5
-
+Alva ville ha totale verdien til alle produktene for sin forsikring.
+Så jeg ladge en .reduce() for å supplere alt til sammen. deretter en console.log() for å få ut svare.
 */
+
+const totalCost = products.reduce((total, item) => total + item.price, 0);
+console.log(totalCost); // 2850
